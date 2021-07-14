@@ -1,0 +1,314 @@
+import React from 'react'
+
+import {useField} from '../hooks/useField'
+
+const FormularioContacto = () => {
+
+    //estado del nombre de usuario para login
+    const {
+        value: valueNombre,
+        setValue: setValueNombre,
+        errors: errorsNombre, //esta variable debe contener un String para mostrarlo como mensaje de validacion personalizado en los input text agnosticos
+        addError: addErrorNombre, //metodo para añadir o concatener nuevos mensajes al String de errorsNombre
+      } = useField({ initialValue: ' ' });
+
+    const {
+        value: valueEmail,
+        setValue: setValueEmail,
+        errors: errorsEmail, //esta variable debe contener un String para mostrarlo como mensaje de validacion personalizado en los input text agnosticos
+        addError: addErrorEmail, //metodo para añadir o concatener nuevos mensajes al String de errorsNombre
+      } = useField({ initialValue: ' ' });
+      
+    const {
+        value: valueTelefono,
+        setValue: setValueTelefono,
+        errors: errorsTelefono, //esta variable debe contener un String para mostrarlo como mensaje de validacion personalizado en los input text agnosticos
+        addError: addErrorTelefono, //metodo para añadir o concatener nuevos mensajes al String de errorsNombre
+      } = useField({ initialValue: ' ' });
+
+    const {
+        value: valueMotivo,
+        setValue: setValueMotivo,
+        errors: errorsMotivo, //esta variable debe contener un String para mostrarlo como mensaje de validacion personalizado en los input text agnosticos
+        addError: addErrorMotivo, //metodo para añadir o concatener nuevos mensajes al String de errorsNombre
+      } = useField({ initialValue: ' ' });
+    
+    //metodo de adicion de errores
+    const onFieldError = React.useCallback(
+        ({ message, path }) => {
+          switch (path[0]) {
+            case "nombre":
+                addErrorNombre(e.target.value)
+                break;
+            case "email":
+                addErrorEmail(e.target.value)
+                break;
+             case "telefono":
+                addErrorTelefono(e.target.value)
+                break;
+             case "motivo":
+                addErrorMotivo(e.target.value)
+                break;           
+          }
+        },
+        [addErrorNombre, addErrorEmail, addErrorTelefono, addErrorMotivo]
+      );
+    //metodo para el manejo del cambio de datos en los campos
+    const handleChange = (e) => {
+        switch (e.target.name){
+           case "nombre":
+               setValueNombre(e.target.value)
+               break;
+           case "email":
+               setValueEmail(e.target.value)
+               break;
+            case "telefono":
+                setValuePais(e.target.value)
+                break;
+            case "motivo":
+                setValueMotivo(e.target.value)
+                break;
+       }
+   }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre: valueNombre, email: valueEmail, telefono: valueTelefono, motivo: valueMotivo })
+        });
+        alert("Contact email has been sent successfully")
+        window.location.href= "/";
+    }
+    return (
+        
+            <React.Fragment>
+                <div className="container">
+                    <div className="banner" />
+                    <div className="formulario">
+                        <form
+                            className="ContactForm"
+                            onSubmit={onSubmit}
+                        >
+                            <div className="titulo">
+                                <span className="Titulo">Contact</span>
+                            </div>                            
+                            <div className="inputs">
+                                <div className="contenedorInput">
+                                    <span>Name</span>
+                                    <input
+                                        name="nombre"
+                                        type="text"
+                                        required="true"
+                                        className="nombre"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="contenedorInput">
+                                    <span>Email</span>
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        required="true"
+                                        className="email"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="contenedorInput">
+                                    <span>Telefono</span>
+                                    <input
+                                        name="nombre"
+                                        type="text"
+                                        required="true"
+                                        className="nombre"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="containerMotivo">
+                                <span className="spanMotivo">Reason</span>
+                                <textarea
+                                    name="motivo"
+                                    type="text"
+                                    className="inputFormMotivo"
+                                    onChange={handleChange}
+                                />
+                                </div>                     
+                            <div className="boton">
+                                <button 
+                                    className="submitForm"
+                                >
+                                    Send
+                                </button>
+                            </div>                            
+                        </form>
+                    </div>
+                    <div className="banner" />
+                </div>
+                
+                <style jsx>
+                    {`
+                       .container{
+                           width: 100%;
+                           display: flex;
+                           background:linear-gradient(90deg, #1c3643 0, #273b47 50%, #1e5372);
+                           color: white;
+                       }
+                       .formulario{
+                           display: flex;
+                           justify-content: center;
+                           text-align: center;
+                           width: 70%;
+                       }
+                       .banner{
+                         width: 25%;
+                        }
+                        .inputs{
+                            display: flex;
+                        }
+                        .inputs div {
+                            text-align: center;
+                            margin: 10px;
+                            padding: 20px;
+                            font-size: 30px;
+                        }
+                        .inputs span{
+                            font-family: 'RymanEco';
+                        }
+                        .contenedorInput{
+                            display: grid;
+                            jusfify-content: center;
+                            margin: auto;
+                        }
+                       .Titulo{
+                            font-family: 'RymanEco';
+                            padding-top: 1rem;
+                            display: flex;
+                            justify-content: center;
+                            font-size: 3em;
+                       }
+                       input{
+                           padding: 0.8em;
+                           text-rendering: optimizeLegibility;
+                       }
+                       .email{
+                           width: 30em;
+                       }
+                       .containerMotivo{
+                           display: grid;
+                           max-width: 100%;
+                           justify-content: center;
+                       }
+                       .containerMotivo span{
+                            font-size: 30px;
+                            font-family: 'RymanEco';
+                       }
+                       .inputFormMotivo{
+                            max-width: 100%;
+                            width: 60em;
+                            height: 10em;
+                            text-rendering: optimizeLegibility;
+                            padding: 0.8em; 
+                            resize: none;
+                            border-radius: 4px;
+                            border: 2px solid #ccc;
+                       }
+                       .submitForm{
+                            box-sizing: border-box;
+                            color: #fff;
+                            cursor: pointer;
+                            display: inline-block;
+                            border: none;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: 2em;
+                            margin-top: 2em;
+                            background-color: #0a8ecd;
+                            box-shadow: 0 2px 13px 0 rgba(4,116,186,0.5);
+                            border-radius: 0 3px 3px 0;
+                            flex-shrink: 0;
+                            padding: 10px 1rem;
+                            height: 50px;
+                            margin-bottom: 25px;
+                            font-size: 1.2rem;
+                       }
+                       @media only screen and (max-width: 1600px){
+                            .email{
+                                width: 20em;
+                            }
+                        }
+                        @media only screen and (max-width: 1400px){
+                            .banner{
+                                width: 15%;
+                            }
+                        }
+                        @media only screen and (max-width: 1200px){
+                            .banner{
+                                width: 5%;
+                            }
+                            .formulario{
+                                width: 90%;
+                            }
+                        }
+                        @media only screen and (max-width: 1000px){
+                            .banner{
+                                width: 0%;
+                            }
+                            .formulario{
+                                width: 100%;
+                            }
+                        }
+                        @media only screen and (max-width: 900px){
+                            .formulario{
+                                width: 100%;
+                                justify-content: center;
+                            }
+                            .ContactForm{
+                                max-width: 100%;
+                            }
+                            .inputs{
+                                flex-direction: column;
+                                margin: auto;
+                            }
+                            .email{
+                                width: 100%;
+                                max-width: 100%;
+                            }
+                            .nombre{
+                                width: 100%;
+                                max-width: 100%;
+                            }
+                            .containerMotivo{
+                                display; flex;
+                                flex-direction: column;
+                            }
+                            .inputFormMotivo{
+                                width: 30em;
+                                max-width: 90%;
+                                margin-left: 2em;
+                            }
+                        }
+                        @media only screen and (max-width: 600px){
+                            .inputFormMotivo{
+                                width: 20rem;
+                            }
+                        }
+                        @media only screen and (max-width: 420px){
+                            .inputs{
+                                max-width: 80%;
+                            }
+                            .inputFormMotivo{
+                                width: 15rem;
+                                max-width: 80%;
+                                margin-left: 1em;s
+                            }
+                        }
+                    `}
+                </style>
+            </React.Fragment>         
+    )
+}
+
+export default FormularioContacto
