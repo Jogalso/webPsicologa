@@ -47,26 +47,33 @@ export default function Terapias() {
                         >
                             Valencia
                         </button>
-                        <div className="ubicacion">
-                            <a href="">
-                                Como llegar
-                            </a>
+                        
                             {lugar == "Alcosser" ? (
-                                <p className="contenido">
-                                <p>Cami Benamer, 1</p>
-                                <p>03841 Alcocer de Planes</p>
-                                <p>Alicante</p>
-                                <p>España</p>
-                            </p>
+                                <div className="ubicacion">
+                                    <a target="_blank" href="https://www.google.es/maps/place/Fundaci%C3%B3n+Herbes+del+Moli+Organic+%26+Cultural+World+Center/@38.7923056,-0.4040166,18z/data=!4m13!1m7!3m6!1s0xd618e46266746a5:0x58a76095aaa2f9de!2s03841+Alcocer+de+Planes,+Alicante!3b1!8m2!3d38.7953339!4d-0.4033885!3m4!1s0xd618e45eb9ff67d:0x83168ced36c04b7!8m2!3d38.7925626!4d-0.4021375?hl=es">
+                                            Como llegar
+                                        </a>
+                                    <p className="contenido">
+                                        <p>Cami Benamer, 1</p>
+                                        <p>03841 Alcocer de Planes</p>
+                                        <p>Alicante</p>
+                                        <p>España</p>
+                                    </p>
+                                </div>
                             ): (
-                                <p className="contenido">
-                                <p>Campanar 11</p>
-                                <p>03841 Valencia</p>
-                                <p>Valencia</p>
-                                <p>España</p>
-                            </p>
+                                <div className="ubicacion">
+                                    <a target="_blank" href="https://www.google.es/maps/place/Valencia/@39.4780628,-0.3951755,19.25z/data=!4m5!3m4!1s0xd604f4cf0efb06f:0xb4a351011f7f1d39!8m2!3d39.4699075!4d-0.3762881?hl=es">
+                                        Como llegar
+                                    </a>
+                                    <p className="contenido">
+                                        <p>Campanar 11</p>
+                                        <p>03841 Valencia</p>
+                                        <p>Valencia</p>
+                                        <p>España</p>
+                                    </p>
+                                </div>
                             )}
-                        </div>
+                        
                     </div>
                 </div> 
             </div>
