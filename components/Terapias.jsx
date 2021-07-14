@@ -102,6 +102,11 @@ export default function Terapias() {
                         background-position: right center;
                         border-radius: 0.5em;
                     }
+                    @media only screen and (max-width: 1280px){
+                        .relleno{
+                            height: 12.5vw;
+                        }
+                    }
                     
                 `}
             </style>
