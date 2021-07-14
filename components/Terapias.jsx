@@ -77,7 +77,7 @@ export default function Terapias() {
                     }
                     .TerapiaNiños{
                         min-height: 1000px;
-                        background-image: url("../imagenes/niños_1280.jpg");
+                        background-image: url("../imagenes/niños_1920.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-attachment: fixed; 
@@ -86,7 +86,7 @@ export default function Terapias() {
                     }
                     .TerapiaAdolescentes{
                         min-height: 1000px;
-                        background-image: url("../imagenes/jovenes_1280.jpg");
+                        background-image: url("../imagenes/jovenes_1920.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-attachment: fixed; 
@@ -95,19 +95,100 @@ export default function Terapias() {
                     }
                     .TerapiaFamiliar{
                         min-height: 1000px;
-                        background-image: url("../imagenes/familias_1280.jpg");
+                        background-image: url("../imagenes/familias_1920.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-attachment: fixed; 
                         background-position: right center;
                         border-radius: 0.5em;
                     }
-                    @media only screen and (max-width: 1280px){
+                    @media only screen and (max-width: 1500px){
                         .relleno{
-                            height: 12.5vw;
+                            height: 11.5vw;
                         }
                     }
-                    
+                    @media only screen and (max-width: 1280px){
+                        .relleno{
+                            height: 12.4vw;
+                        }
+                        .TerapiaPersonal{
+                            background-image: url("../imagenes/heart_1280.png");
+                        }
+                        .TerapiaNiños{
+                            background-image: url("../imagenes/niños_1280.jpg");
+                        }
+                        .TerapiaAdolescentes{
+                            background-image: url("../imagenes/jovenes_1280.jpg");
+                        }
+                        .TerapiaFamiliar{
+                            background-image: url("../imagenes/familias_1280.jpg");
+                        }
+                    }
+                    @media only screen and (max-width: 1150px){
+                        .relleno{
+                            height: 13vw;
+                        }
+                    }
+                    @media only screen and (max-width: 1000px){
+                        .relleno{
+                            height: 14vw;
+                        }
+                    }
+                    @media only screen and (max-width: 850px){
+                        .relleno{
+                            height: 15vw;
+                        }
+                    }
+                    @media only screen and (max-width: 640px){
+                        .relleno{
+                            height: 15vw;
+                        }
+                        .TerapiaPersonal{
+                            background-image: url("../imagenes/heart_640.png");
+                            background-position: center;
+                            min-height: 600px;
+                        }
+                        .TerapiaNiños{
+                            background-image: url("../imagenes/niños_640.jpg");
+                            background-position: center;
+                            min-height: 600px;
+                        }
+                        .TerapiaAdolescentes{
+                            background-image: url("../imagenes/jovenes_640.jpg");
+                            background-position: center;
+                            min-height: 600px;
+                        }
+                        .TerapiaFamiliar{
+                            background-image: url("../imagenes/familias_640.jpg");
+                            background-position: center;
+                            min-height: 600px;
+                        }
+                    }
+                    @media only screen and (max-width: 600px){
+                        .relleno{
+                            height: 19.5vw;
+                        }
+                    }
+                    @media only screen and (max-width: 550px){
+                        .relleno{
+                            height: 21.5vw;
+                        }
+                    }
+                    @media only screen and (max-width: 500px){
+                        .relleno{
+                            height: 23vw;
+                        }
+                    }
+                    @media only screen and (max-width: 450px){
+                        .relleno{
+                            height: 24.5vw;
+                        }
+                    }
+                    @media only screen and (max-width: 400px){
+                        .relleno{
+                            height: 27vw;
+                        }
+                    }
                 `}
             </style>
         </div>

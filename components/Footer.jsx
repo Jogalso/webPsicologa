@@ -43,6 +43,28 @@ export default function Footer() {
                         line-height: 1.5vw;
                         margin-bottom: 0.15vw;
                     }
+                    @media only screen and (max-width: 1000px){
+                        .Footer{
+                            margin-top: 1vw;
+                        }
+                    }
+                    @media only screen and (max-width: 800px){
+                        .Footer{
+                            height: 8vw;
+                            margin-top: 0.3vw;
+                        }
+                        .Footer a{
+                            margin-top: 1vw;
+                            margin-bottom: 2vw;
+                            padding: 2vw 3vw;
+                        }
+                    }
+                    @media only screen and (max-width: 600px){
+                        .Footer{
+                            margin-top: 0.8vw;
+                        }
+                        
+                    }
                 `}
             </style>
         </div>

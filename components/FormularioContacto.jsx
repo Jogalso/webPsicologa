@@ -280,7 +280,6 @@ const FormularioContacto = () => {
                             }
                             .inputs{
                                 flex-direction: column;
-                                margin: auto;
                             }
                             .email{
                                 width: 100%;
@@ -304,15 +303,36 @@ const FormularioContacto = () => {
                             .inputFormMotivo{
                                 width: 20rem;
                             }
+                            .Titulo{
+                                font-size: 10vw;
+                           }
+                           .inputs span{
+                            font-size: 4vw;
+                       }
                         }
                         @media only screen and (max-width: 420px){
                             .inputs{
-                                max-width: 80%;
+                                max-width: 90%;
+                                margin-right: auto;
+                            }
+                            .inputs div {
+                                margin: 3vw;
+                                padding: 4vw;
+                                font-size: 5vw;
                             }
                             .inputFormMotivo{
-                                width: 15rem;
+                                width: 80vw;
                                 max-width: 80%;
-                                margin-left: 1em;s
+                                margin-left: 1em;
+                            }
+                            .Titulo{
+                                font-size: 13vw;
+                            }
+                            .inputs span{
+                                font-size: 5vw;
+                            }
+                            .containerMotivo span{
+                                font-size: 5vw;
                             }
                         }
                     `}

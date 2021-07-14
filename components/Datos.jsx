@@ -137,7 +137,109 @@ export default function Terapias() {
                     margin-bottom: 1vw;
                     margin-right: 0.2vw;
                 }
-                .contenido{
+                @media only screen and (max-width: 1500px){
+                    .relleno{
+                        height: 11.5vw;
+                    }
+                }
+                @media only screen and (max-width: 1280px){
+                    .relleno{
+                        height: 12.4vw;
+                    }
+                }
+                @media only screen and (max-width: 1150px){
+                    .relleno{
+                        height: 13vw;
+                    }
+                }
+                @media only screen and (max-width: 1000px){
+                    .relleno{
+                        height: 14vw;
+                    }
+                }
+                @media only screen and (max-width: 850px){
+                    .relleno{
+                        height: 15vw;
+                    }
+                }
+                @media only screen and (max-width: 700px){
+                    .titulo{
+                        font-size: 5vw;
+                    }
+                    .datos a{
+                        padding: 1.2vw 2vw;
+                        line-height: 2vw;
+                    }
+                    .botonesLugar{
+                        padding: 1vw 1vw;
+                        line-height: 2Svw;
+                        margin-bottom: 1vw;
+                        margin-right: 0.5vw;
+                    }
+                    .botonesLugarActivo{
+                        padding: 1.1vw 1.1vw;
+                        line-height: 2Svw;
+                        margin-bottom: 1vw;
+                        margin-right: 0.5vw;
+                    }
+                }
+                @media only screen and (max-width: 640px){
+                    .relleno{
+                        height: 15vw;
+                    }
+                }
+                @media only screen and (max-width: 600px){
+                    .relleno{
+                        height: 18vw;
+                    }
+                }
+                @media only screen and (max-width: 550px){
+                    .relleno{
+                        height: 21.5vw;
+                    }
+                }
+                @media only screen and (max-width: 500px){
+                    .relleno{
+                        height: 23vw;
+                    }
+                }
+                @media only screen and (max-width: 450px){
+                    .relleno{
+                        height: 24.5vw;
+                    }
+                    .titulo{
+                        margin-bottom: 0.5em;
+                    }
+                    .contenedor{
+                        max-width: 40%;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .contacto{
+                        margin-bottom: 2em;
+                    }
+                    .ubicacion{
+                        margin-top: 1.5em;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .contenido p{
+                        margin: 0.4em;
+                    }
+                    
+                }
+                @media only screen and (max-width: 400px){
+                    .relleno{
+                        height: 27vw;
+                    }
+                }
+                @media only screen and (max-width: 350px){
+                    .datos a{
+                        font-size: 4vw;
+                        padding: 2vw 3vw;
+                        line-height: 1vw;
+                    }
                 }
                 `}
             </style>
